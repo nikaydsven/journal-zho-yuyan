@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>雨燕直播 · 站点介绍</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #f5f6fa;
+            color: #1e1e2a;
+            line-height: 1.7;
+        }
+
+        /* 深色头图 */
+        .hero {
+            background: #0d0d1a;
+            color: #e4e4f0;
+            padding: 4rem 2rem 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 40px;
+            background: linear-gradient(to bottom, rgba(13, 13, 26, 0), #f5f6fa);
+        }
+
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero .sub {
+            font-size: 1.1rem;
+            color: #a0a0c0;
+            max-width: 520px;
+            margin: 0 auto 1rem;
+        }
+
+        .hero .tagline {
+            display: inline-block;
+            background: #2e2e4a;
+            padding: 0.3rem 1.2rem;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            color: #d0d0f0;
+            margin-top: 0.5rem;
+        }
+
+        .container {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem 3.5rem;
+        }
+
+        .article-title {
+            font-size: 1.9rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #111;
+            border-left: 5px solid #3a6ea5;
+            padding-left: 1rem;
+        }
+
+        .meta {
+            color: #5b5b6b;
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem 1.2rem;
+        }
+
+        .meta span {
+            background: #e9eaef;
+            padding: 0.2rem 0.7rem;
+            border-radius: 20px;
+        }
+
+        .lead {
+            font-size: 1.15rem;
+            background: #ffffff;
+            padding: 1.2rem 1.6rem;
+            border-radius: 12px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.03);
+            margin-bottom: 2.2rem;
+            border: 1px solid #e1e3ec;
+            color: #1f1f30;
+        }
+
+        .lead strong {
+            color: #2b4f7a;
+        }
+
+        .section-card {
+            background: #ffffff;
+            padding: 1.8rem 2rem;
+            border-radius: 18px;
+            margin-bottom: 1.8rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+            border: 1px solid #e9ebf2;
+            transition: box-shadow 0.2s;
+        }
+
+        .section-card:hover {
+            box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+        }
+
+        .section-card h2 {
+            font-size: 1.4rem;
+            font-weight: 550;
+            margin-bottom: 0.9rem;
+            color: #20203a;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section-card h2::before {
+            content: "·";
+            color: #3a6ea5;
+            font-weight: bold;
+            font-size: 1.8rem;
+            line-height: 1;
+        }
+
+        .section-card p {
+            margin-bottom: 0.9rem;
+        }
+
+        .section-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .highlight-link {
+            color: #1d4d7c;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .highlight-link:hover {
+            color: #0c2f4f;
+            text-decoration-thickness: 2px;
+        }
+
+        .quote-block {
+            background: #edf0f8;
+            padding: 1.2rem 1.8rem;
+            border-radius: 14px;
+            margin: 1.5rem 0;
+            font-style: normal;
+            border-left: 4px solid #3a6ea5;
+            color: #202030;
+        }
+
+        .quote-block p {
+            margin-bottom: 0.6rem;
+        }
+
+        .quote-block .source {
+            font-style: normal;
+            font-size: 0.9rem;
+            color: #4b4b60;
+        }
+
+        .note {
+            background: #fafafd;
+            border: 1px dashed #b6bdce;
+            padding: 1rem 1.4rem;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            color: #2f2f42;
+        }
+
+        .note strong {
+            color: #1e3d64;
+        }
+
+        .faq-mini {
+            margin-top: 0.5rem;
+        }
+
+        .faq-item {
+            padding: 0.6rem 0;
+            border-bottom: 1px solid #eaecf2;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-q {
+            font-weight: 550;
+            color: #12122a;
+        }
+
+        .faq-a {
+            color: #3f3f55;
+            padding-left: 1.2rem;
+        }
+
+        .footnote {
+            text-align: center;
+            padding: 2rem 1rem 0.5rem;
+            font-size: 0.9rem;
+            color: #5a5a70;
+            border-top: 1px solid #daddE6;
+            margin-top: 2.8rem;
+        }
+
+        /* 响应式 */
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .container {
+                padding: 1.8rem 1rem 2.5rem;
+            }
+            .section-card {
+                padding: 1.2rem 1.2rem;
+            }
+            .article-title {
+                font-size: 1.5rem;
+                padding-left: 0.8rem;
+            }
+            .lead {
+                font-size: 1rem;
+                padding: 1rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <h1>雨燕直播</h1>
+        <p class="sub">贴近赛场 · 清晰而专注的直播信息页</p>
+        <span class="tagline">实用 · 直接 · 无干扰</span>
+    </header>
+
+    <main class="container">
+
+        <h2 class="article-title">是关于什么的页面？</h2>
+        <div class="meta">
+            <span>站点简记</span>
+            <span>使用说明</span>
+            <span>2025</span>
+        </div>
+
+        <div class="lead">
+            <strong>识别一个网站用途</strong> 往往只需几秒钟。如果你正在寻找一个<strong>与直播赛事相关的页面</strong>，那么这里整理的内容会让你快速了解：<a href="https://zho-yuyan.com" class="highlight-link">雨燕直播</a> 在这个介绍页里主要呈现哪些信息、适合什么场景、以及你可以期待什么。
+        </div>
+
+        <!-- 正文1：从识别用途切入 -->
+        <div class="section-card">
+            <h2>第一眼：它在说明什么</h2>
+            <p>打开页面后，最直接的信息是头图上的名称与简短定位。没有复杂的菜单，也没有跳转广告。页面结构像一篇<strong>整理过的笔记</strong>——标题、分段、提示区块，每一段都在解释这个站点的基本调性。</p>
+            <p>对于新访客来说，这种方式比堆砌功能模块更省力，你不需要在五个按钮之间犹豫，只需要往下读。</p>
+        </div>
+
+        <!-- 正文2：特点与内容取向 -->
+        <div class="section-card">
+            <h2>内容特点</h2>
+            <p>这里的文字偏重<strong>介绍与澄清</strong>，而不是推销或吸引点击。段落中会嵌入必要的链接，例如当提到平台本身时，会自然写出 <a href="https://zho-yuyan.com" class="highlight-link">雨燕直播</a> 这个名称，但它只是句子的一部分，不会单独拎出来作为「入口」或「前往」。</p>
+            <p>页面还包含引用、提示和少量问答摘要，目的是让信息更完整，同时保持克制——不编造体验，也不夸大功能。</p>
+        </div>
+
+        <!-- 引用区块 -->
+        <div class="quote-block">
+            <p>“一个介绍页好不好用，就看它能不能在三十秒内回答‘这是什么’和‘我该看哪里’。”</p>
+            <p class="source">—— 来自一次内部整理笔记的注释</p>
+        </div>
+
+        <!-- 正文3：适用场景 -->
+        <div class="section-card">
+            <h2>适合哪些场景</h2>
+            <p>如果你是第一次接触这个站点，想快速确认它是否跟自己关注的领域相关，那么这些分段正文可以帮你节省时间。如果你在寻找一个<strong>干净的参考页</strong>，不想被浮窗、弹框或华丽动画干扰，这里的设计也倾向于稳定、直白。</p>
+            <p>对于手机阅读做了适配，字号和间距在窄屏上仍然清晰。段落之间留白适当，不会挤在一起。</p>
+            <div class="note" style="margin-top: 1.2rem;">
+                <strong>提示：</strong> 页面中的链接默认新窗口打开（由浏览器行为决定），但所有链接都清晰标出了目标文本。你可以随时通过地址栏确认当前所在位置。
+            </div>
+        </div>
+
+        <!-- FAQ 摘要（非完整，但给出典型） -->
+        <div class="section-card">
+            <h2>常见疑问摘要</h2>
+            <div class="faq-mini">
+                <div class="faq-item">
+                    <div class="faq-q">这个页面是产品首页吗？</div>
+                    <div class="faq-a">不完全是。它更像一个介绍与说明页，帮助你理解站点的内容方向。页内有指向 <a href="https://zho-yuyan.com" class="highlight-link">雨燕直播</a> 的链接，但本身不是功能型界面。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">为什么页面看起来像一篇博客文章？</div>
+                    <div class="faq-a">因为这种形式对于<strong>快速传达信息</strong>更有效。没有侧边栏、没有浮窗，你只需要从上往下阅读就能获得大致认知。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">有跳转到其他平台的要求吗？</div>
+                    <div class="faq-a">没有。页面只提供必要的背景描述和链接，不做强制跳转或诱导点击。</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 结尾提示语 -->
+        <div class="quote-block" style="background: #e6eaf3;">
+            <p>如果你觉得这段介绍已经回答了你的疑问，那就不需要再额外操作。如果需要进一步了解，可以随时参考页内链接。</p>
+            <p class="source" style="margin-top: 0.5rem;">—— 清晰、平实、不绕弯</p>
+        </div>
+
+        <div class="footnote">
+            <p>本文档基于「雨燕直播」介绍页整理 · 仅作信息说明用途</p>
+            <p style="margin-top: 0.3rem;">内容保持克制，未包含任何未经核实的描述</p>
+        </div>
+
+    </main>
+
+</body>
+</html>
