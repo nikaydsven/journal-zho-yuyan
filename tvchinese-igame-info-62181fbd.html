@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简明指南 · 爱游戏</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f0f2f4;
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: #1e2a32;
+            line-height: 1.7;
+            padding: 2rem 1.2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .page {
+            max-width: 820px;
+            width: 100%;
+        }
+
+        .hero {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 2.8rem 2.4rem 2.2rem;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e6e9ed;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            color: #142a35;
+            margin-bottom: 0.6rem;
+        }
+
+        .hero .sub {
+            font-size: 1.1rem;
+            color: #546a7a;
+            max-width: 520px;
+            margin: 0 auto 1rem;
+            font-weight: 350;
+            border-left: 3px solid #cbd5e0;
+            padding-left: 1rem;
+            text-align: left;
+        }
+
+        .divider {
+            border: none;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #cfd9e2, transparent);
+            margin: 0.8rem 0 1.4rem;
+        }
+
+        .card-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.6rem;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 1.8rem 2rem;
+            border: 1px solid #e2e7ed;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+            transition: box-shadow 0.15s;
+        }
+
+        .card:hover {
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+        }
+
+        .card h2 {
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: #1f3b4a;
+            margin-bottom: 0.6rem;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .card h2 .mark {
+            display: inline-block;
+            width: 0.4rem;
+            height: 1.2rem;
+            background: #8199ae;
+            border-radius: 2px;
+            margin-right: 0.4rem;
+        }
+
+        .card p {
+            margin-bottom: 0.9rem;
+            color: #2c3f4f;
+        }
+
+        .card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .quote-box {
+            background: #f4f7fa;
+            border-left: 4px solid #a0b7cc;
+            padding: 1.2rem 1.6rem;
+            border-radius: 0 14px 14px 0;
+            margin: 1.2rem 0 0.2rem;
+            font-style: normal;
+            color: #2f4858;
+        }
+
+        .quote-box p {
+            margin-bottom: 0.3rem;
+        }
+
+        .quote-box .source {
+            font-size: 0.9rem;
+            color: #6a8299;
+            margin-top: 0.4rem;
+        }
+
+        .link-sentence {
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 1.5rem 2rem;
+            border: 1px solid #dce2e9;
+            margin-top: 1.8rem;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            font-size: 1.05rem;
+        }
+
+        .link-sentence a {
+            color: #1f5c7e;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dotted #8daec9;
+            transition: border 0.2s, color 0.2s;
+        }
+
+        .link-sentence a:hover {
+            color: #0b3f5a;
+            border-bottom: 1px solid #0b3f5a;
+        }
+
+        .faq-summary {
+            display: flex;
+            flex-direction: column;
+            gap: 0.9rem;
+            margin-top: 0.6rem;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eef2f6;
+            padding-bottom: 0.8rem;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .faq-q {
+            font-weight: 500;
+            color: #1e3a4a;
+            margin-bottom: 0.2rem;
+        }
+
+        .faq-a {
+            color: #3d576b;
+            font-size: 0.95rem;
+        }
+
+        .footer-note {
+            margin-top: 2.2rem;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #7c93a8;
+            border-top: 1px solid #dde3ea;
+            padding-top: 1.6rem;
+        }
+
+        @media (max-width: 500px) {
+            body {
+                padding: 1rem 0.8rem;
+            }
+            .hero {
+                padding: 1.8rem 1.2rem;
+            }
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+            .card {
+                padding: 1.4rem 1.2rem;
+            }
+            .link-sentence {
+                padding: 1.2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- hero 标题与导语 -->
+    <div class="hero">
+        <h1>爱游戏 · 一点指南</h1>
+        <div class="sub">
+            <span>一篇关于如何找到、如何开始的简短笔记。不绕弯子，只说实在的。</span>
+        </div>
+        <hr class="divider">
+        <p style="color:#416377; font-size:0.95rem; margin-top:0.2rem;">写下这些，是因为有些界面与流程确实值得提前熟悉。</p>
+    </div>
+
+    <div class="card-grid">
+
+        <!-- 正文段落卡片 1 -->
+        <div class="card">
+            <h2><span class="mark"></span>从何处着手</h2>
+            <p>如果你打开过几个不同的站点，大概能感觉到：有些平台把资源藏得很深，另一些则相对直白。而这里——我们说的 <a href="https://tvchinese-igame.com" style="color:#1f5c7e; text-decoration:underline dotted #8daec9;">爱游戏</a> ——首页的逻辑偏简洁，分类入口通常就在导航栏前几项。不必翻找，直接点开就好。</p>
+            <p>不过我也遇到过有人问“怎么找不到播放按钮”。其实只要选一个条目进入，详情页下方就会列出可用的源。有时列表只有一行，需要横向滑动——这在手机浏览器上尤其常见。花十秒钟摸清这个布局，后面就顺畅了。</p>
+        </div>
+
+        <!-- 正文段落卡片 2 + 引用提示 -->
+        <div class="card">
+            <h2><span class="mark"></span>几个值得留意的细节</h2>
+            <p>内容库的更新频率不算慢，但热门的和冷门的更新时间不太一样。我的做法是：如果遇到想看的剧集或比赛，顺手加个书签，隔两三天回来看看。另外，搜索功能支持模糊匹配，输入片段标题通常就能定位。</p>
+            <div class="quote-box">
+                <p>“别急着点第一个结果——有时列表里会出现重复条目，点开之后看一眼时长和清晰度描述，更容易挑到合意的源。”</p>
+                <div class="source">—— 一位常看直播的用户笔记</div>
+            </div>
+            <p>还有一点：部分页面会弹出临时性的推荐浮层，背景半透明，右上角有一个很小的关闭按钮。如果觉得干扰，留意一下就能关掉，不影响后续浏览。</p>
+        </div>
+
+        <!-- 正文段落卡片 3: 场景 + 提醒 -->
+        <div class="card">
+            <h2><span class="mark"></span>常见场景与提醒</h2>
+            <p>假设你只是想饭后找个综艺随便看看，或者想确认某场体育赛事是否已经上线。那么直接进入 <a href="https://tvchinese-igame.com" style="color:#1f5c7e; text-decoration:underline dotted #8daec9;">爱游戏</a> 首页，按分类筛选或使用搜索栏，通常两三次点击就能抵达。不需要注册，也没有复杂的订阅流程。</p>
+            <p>不过我也建议：如果用的是公共设备或共享网络，关闭页面后顺手清除一下浏览器历史缓存——纯粹是出于日常安全习惯，和站点本身没有关系。另外，部分资源加载受限于网络环境，如果遇到空白或缓冲，换个时段再试往往会好很多。</p>
+        </div>
+
+        <!-- FAQ 摘要卡片 -->
+        <div class="card">
+            <h2><span class="mark"></span>偶尔被问到的几点</h2>
+            <div class="faq-summary">
+                <div class="faq-item">
+                    <div class="faq-q">· 需要安装播放器或插件吗？</div>
+                    <div class="faq-a">不用。所有内容都基于浏览器直接播放，不需要额外下载。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">· 手机界面和电脑一样吗？</div>
+                    <div class="faq-a">布局会自适应，但手机端部分菜单被折叠为图标，点开就能看到完整分类。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">· 为什么有些内容打不开？</div>
+                    <div class="faq-a">多半是临时线路波动，或者源被替换。可以等几小时再试，也可以换个分类下的类似条目。</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 自然嵌入链接的句子卡片（独立） -->
+        <div class="link-sentence">
+            <p>如果你还没有去过，可以花两分钟逛逛 <a href="https://tvchinese-igame.com">爱游戏</a> ——首页的内容排列比想象中更清楚，至少我的经验是这样。</p>
+        </div>
+
+    </div>
+
+    <div class="footer-note">
+        写于一次安静的整理 · 仅作参考
+    </div>
+
+</div>
+</body>
+</html>
