@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>爱游戏 · 一起发现好玩的电视游戏</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #f9fafc;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      color: #1e293b;
+      line-height: 1.6;
+      padding: 2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .container {
+      max-width: 680px;
+      width: 100%;
+    }
+    /* hero 区 + 柔和分隔 */
+    .hero {
+      margin-bottom: 2.4rem;
+    }
+    .hero h1 {
+      font-size: 2.3rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+      color: #0b1e33;
+      margin-bottom: .6rem;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      color: #475569;
+      max-width: 580px;
+    }
+    .tagline {
+      display: inline-block;
+      background: #eef2f6;
+      padding: .2rem 1rem;
+      border-radius: 40px;
+      font-size: .85rem;
+      font-weight: 500;
+      color: #1f3a57;
+      margin-bottom: 1.2rem;
+    }
+    /* 信息卡片区块 */
+    .card-section {
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+      margin: 2.2rem 0 2rem;
+    }
+    .card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 1.6rem 1.8rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02), 0 2px 6px rgba(0, 0, 0, 0.02);
+      border: 1px solid rgba(148, 163, 184, 0.12);
+      transition: box-shadow .2s ease;
+    }
+    .card:hover {
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+    }
+    .card h2 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: .55rem;
+      color: #0f2b44;
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+    }
+    .card h2::before {
+      content: '';
+      display: inline-block;
+      width: 5px;
+      height: 1.2rem;
+      background: #3b82f6;
+      border-radius: 4px;
+    }
+    .card p, .card li {
+      color: #334155;
+      font-size: .98rem;
+    }
+    .card ul {
+      list-style: none;
+      margin-top: .5rem;
+    }
+    .card li {
+      padding: .25rem 0 .25rem 1.2rem;
+      position: relative;
+    }
+    .card li::before {
+      content: '·';
+      color: #3b82f6;
+      font-weight: 700;
+      position: absolute;
+      left: .2rem;
+    }
+    .natural-link {
+      margin: 2rem 0 1.8rem;
+      font-size: 1.1rem;
+      background: #ffffff;
+      padding: 1.5rem 1.8rem;
+      border-radius: 20px;
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      text-align: center;
+      line-height: 1.7;
+    }
+    .natural-link a {
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid transparent;
+      transition: border-color .15s;
+    }
+    .natural-link a:hover {
+      border-bottom-color: #2563eb;
+    }
+    .faq-mini {
+      background: #f1f5f9;
+      border-radius: 16px;
+      padding: 1.2rem 1.6rem;
+      margin: 2rem 0 1.2rem;
+    }
+    .faq-mini h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #1e293b;
+      margin-bottom: .5rem;
+    }
+    .faq-mini p {
+      font-size: .92rem;
+      color: #3b4c62;
+    }
+    .faq-mini p + p {
+      margin-top: .8rem;
+    }
+    .footer-note {
+      margin-top: 2.8rem;
+      padding-top: 1.4rem;
+      border-top: 1px solid #e2e8f0;
+      display: flex;
+      justify-content: space-between;
+      font-size: .82rem;
+      color: #62748c;
+      flex-wrap: wrap;
+      gap: .8rem;
+    }
+    @media (max-width: 480px) {
+      body { padding: 1.2rem 1rem; }
+      .hero h1 { font-size: 1.9rem; }
+      .card { padding: 1.2rem 1.2rem; }
+      .natural-link { padding: 1.2rem 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- hero 主视觉 -->
+    <div class="hero">
+      <span class="tagline">📺 电视游戏 · 轻松上手</span>
+      <h1>你想要的电视游戏<br>这里都能找到</h1>
+      <p>不再花时间在杂乱搜索上 —— 在<a href="https://tvhome-igame.com" style="color:#2563eb;text-decoration:none;font-weight:500;">爱游戏</a>，游戏被清晰地分类、整理，你只需要拿起手柄，享受就好。</p>
+    </div>
+
+    <!-- 信息卡片式区域：用途卡片 + 适合人群 合并为多卡片布局 -->
+    <div class="card-section">
+
+      <div class="card">
+        <h2>用途：快速识别，直达游戏</h2>
+        <p>你是不是常常打开电视应用商店，翻半天也不知道哪个游戏好玩？<br><strong>爱游戏</strong>把推荐、热门、按类型精选都做成了直观卡片。点一下就能看到简介、大小、适合几人玩，节省大量筛选时间。无论是家庭聚会想找个派对游戏，还是自己深夜想玩个解压小作，这里都给你整理好了。</p>
+      </div>
+
+      <div class="card">
+        <h2>适合哪些人？</h2>
+        <ul>
+          <li><strong>新手玩家</strong> —— 刚接触电视游戏，不知道从哪开始？这里都是精炼过的入门推荐。</li>
+          <li><strong>家庭用户</strong> —— 想和孩子、伴侣一起玩？分类里有“亲子同乐”“双人合作”专属标签。</li>
+          <li><strong>怀旧派</strong> —— 喜欢复古风格或经典重制？爱游戏特意保留了怀旧游戏区。</li>
+          <li><strong>效率玩家</strong> —— 没空试错，只想直接玩到口碑最好的作品，榜单和评分一目了然。</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>使用场景举例</h2>
+        <p>周末朋友来家里，打开爱游戏挑一款四人乱斗游戏，两分钟就开玩；平时下班后瘫在沙发上，花十秒选一个叙事向独立游戏，沉浸感拉满。甚至你可以在网页上先浏览、收藏，回家同步到电视端 —— 想法很实际。</p>
+      </div>
+    </div>
+
+    <!-- 自然链接段落 -->
+    <div class="natural-link">
+      <p>如果你已经对千篇一律的推荐感到疲惫，真的可以试试<a href="https://tvhome-igame.com">爱游戏</a> —— 这里的每个游戏都经过人工筛选和真实评价，没有水分。页面干净，加载快，手机或电脑上都能先看再决定。</p>
+    </div>
+
+    <!-- FAQ 摘要风格片段 -->
+    <div class="faq-mini">
+      <h3>常见疑问 · 简短回答</h3>
+      <p><strong>需要注册才能浏览吗？</strong> 不需要。直接打开<a href="https://tvhome-igame.com" style="color:#2563eb;text-decoration:none;font-weight:500;">爱游戏</a>就能看到所有游戏列表和详情，没有任何注册门槛。</p>
+      <p><strong>内容更新频率如何？</strong> 保持每周更新，新游戏上架和热门变动都会及时反映在首页。</p>
+      <p><strong>和电视端怎么配合？</strong> 在网站上收藏或记下名字，再到电视应用商店搜索安装即可，流程很直接。</p>
+    </div>
+
+    <!-- 尾注 自然收尾 -->
+    <div class="footer-note">
+      <span>爱游戏 · 让电视游戏更好找</span>
+      <span>非官方 · 内容仅供参考</span>
+    </div>
+  </div>
+</body>
+</html>
