@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>爱游戏 · 稳定入口与页面说明</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans SC', sans-serif;
+      background: #f1f7f5;
+      color: #1a2c2a;
+      line-height: 1.7;
+      padding: 2rem 1rem 4rem;
+      min-height: 100vh;
+    }
+
+    .page {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    /* ——— hero 区域 ——— */
+    .hero {
+      margin-bottom: 3rem;
+      padding: 2.5rem 1.8rem;
+      background: linear-gradient(145deg, #e9f3f0 0%, #d2e7e0 100%);
+      border-radius: 32px 12px 32px 12px;
+      box-shadow: 0 8px 20px rgba(40, 80, 70, 0.06);
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 450;
+      letter-spacing: 0.02em;
+      color: #1a4038;
+      margin-bottom: 0.6rem;
+      line-height: 1.3;
+    }
+
+    .hero .tagline {
+      font-size: 1.1rem;
+      color: #3d6b60;
+      border-left: 4px solid #298073;
+      padding-left: 1rem;
+      margin-top: 0.3rem;
+    }
+
+    /* ——— 正文卡片 ——— */
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.6rem;
+      margin: 2.2rem 0;
+    }
+
+    @media (min-width: 600px) {
+      .card-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.8rem;
+      }
+    }
+
+    .card {
+      background: #ffffffdd;
+      backdrop-filter: blur(2px);
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 1.8rem 1.6rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03), 0 0 0 1px rgba(60, 120, 100, 0.08);
+      transition: box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 8px 24px rgba(40, 100, 80, 0.08), 0 0 0 1px #29807333;
+    }
+
+    .card h2 {
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: #1b4d42;
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .card h2::before {
+      content: "◆";
+      font-size: 0.8rem;
+      color: #298073;
+      opacity: 0.7;
+    }
+
+    .card p {
+      font-size: 0.98rem;
+      color: #2a423d;
+      margin-bottom: 0.5rem;
+    }
+
+    .card .meta-note {
+      font-size: 0.88rem;
+      color: #5b7a72;
+      border-top: 1px dashed #c4dbd3;
+      padding-top: 0.8rem;
+      margin-top: 0.8rem;
+    }
+
+    /* ——— 引用/提示块 ——— */
+    .quote-block {
+      background: #e3f0ec;
+      border-left: 6px solid #1f7566;
+      border-radius: 0 16px 16px 0;
+      padding: 1.6rem 2rem 1.6rem 1.8rem;
+      margin: 2.6rem 0 2rem;
+      font-style: normal;
+    }
+
+    .quote-block p {
+      font-size: 1.04rem;
+      color: #153b33;
+    }
+
+    .quote-block .source {
+      display: block;
+      margin-top: 0.7rem;
+      font-size: 0.92rem;
+      color: #497067;
+      font-style: italic;
+    }
+
+    /* ——— 访问句（内嵌链接） ——— */
+    .access-sentence {
+      background: #ffffff;
+      border-radius: 30px;
+      padding: 1.3rem 2rem;
+      text-align: center;
+      font-size: 1.08rem;
+      color: #1d3d36;
+      box-shadow: 0 2px 8px rgba(40, 90, 75, 0.05);
+      margin: 2.8rem 0 2.2rem;
+      line-height: 1.8;
+    }
+
+    .access-sentence a {
+      color: #1a6d5c;
+      text-decoration: none;
+      font-weight: 480;
+      border-bottom: 2px solid #29807344;
+      padding-bottom: 0.05em;
+      transition: border-color 0.2s;
+    }
+
+    .access-sentence a:hover {
+      border-bottom-color: #298073;
+    }
+
+    /* ——— faq 摘要 ——— */
+    .faq-mini {
+      background: #f5fbf9;
+      border-radius: 24px;
+      padding: 1.8rem 1.8rem 1.2rem;
+      margin: 2rem 0;
+    }
+
+    .faq-mini h3 {
+      font-weight: 450;
+      font-size: 1.1rem;
+      color: #1b4d42;
+      margin-bottom: 1rem;
+      letter-spacing: 0.01em;
+    }
+
+    .faq-item {
+      padding: 0.9rem 0;
+      border-bottom: 1px solid #d5e4de;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-item .q {
+      font-weight: 470;
+      color: #1d4b3f;
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    .faq-item .a {
+      font-size: 0.96rem;
+      color: #3d6258;
+      padding-left: 0.2rem;
+    }
+
+    /* ——— 页脚 ——— */
+    .footer-note {
+      margin-top: 4rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #6b8a80;
+      border-top: 1px solid #d1e2db;
+      padding-top: 2rem;
+      letter-spacing: 0.01em;
+    }
+
+    /* 响应式微调 */
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      .hero .tagline {
+        font-size: 1rem;
+      }
+      .card {
+        padding: 1.4rem 1.2rem;
+      }
+      .quote-block {
+        padding: 1.2rem 1.2rem;
+      }
+      .access-sentence {
+        padding: 1rem 1.2rem;
+        font-size: 1rem;
+      }
+    }
+
+    /* 辅助 */
+    .soft-highlight {
+      background: #d5ebe3;
+      padding: 0 0.2em;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- hero 区 -->
+    <div class="hero">
+      <h1>爱游戏 · 一处稳定的入口</h1>
+      <div class="tagline">页面说明与导航 · 不止于打开，更在于到达</div>
+    </div>
+
+    <!-- 第一段：引导叙述 -->
+    <p style="font-size:1.05rem; margin-bottom:1.8rem; color:#1f3f38;">
+      如果你正在寻找一个熟悉、持续在线的起点，<span class="soft-highlight">爱游戏</span> 这个名称大概并不陌生。  
+      这里提供的是关于该站的基本介绍、使用场景以及一些常见疑问的摘要。页面本身保持简洁，目的在于帮助新访客快速建立认知，也让老用户能随时确认访问路径。
+    </p>
+
+    <!-- 网格卡片：特点与说明 -->
+    <div class="card-grid">
+      <div class="card">
+        <h2>入口的稳定性</h2>
+        <p>无论是通过收藏夹还是直接输入，一个可靠的地址能省去反复搜索的精力。<strong>爱游戏</strong> 的页面结构多年来保持一致的调性，这对习惯固定流程的用户尤其友好。</p>
+        <div class="meta-note">→ 建议将地址加入浏览器书签，日常使用更高效。</div>
+      </div>
+      <div class="card">
+        <h2>页面说明 · 轻量信息</h2>
+        <p>本页并非功能型面板，而是一份叙述式的指引。你可以把它看作一个安静的告示牌：告诉来者这里是什么、如何找到常用路径，以及遇到问题时的基本思路。</p>
+        <div class="meta-note">→ 没有弹窗与强引导，只做告知。</div>
+      </div>
+      <div class="card">
+        <h2>适合谁读</h2>
+        <p>第一次接触 <a href="https://tvcn-igame.com" style="color:#1a6d5c; text-decoration: underline; text-underline-offset:3px;">爱游戏</a> 的朋友，或希望整理访问习惯的常客。文字篇幅不长，一杯茶的工夫就能读完。</p>
+      </div>
+      <div class="card">
+        <h2>关于使用场景</h2>
+        <p>日常浏览、信息查阅、或是单纯保持一个熟悉的入口在触手可及的位置。不需要每次重新发掘，这是稳定入口存在的理由。</p>
+      </div>
+    </div>
+
+    <!-- 引用提示块 -->
+    <div class="quote-block">
+      <p>“一个好的入口不需要喧哗，它只需在需要的时候恰好在那里。保持简单、克制，是对使用者注意力最基本的尊重。”</p>
+      <span class="source">——来自产品设计笔记，2025</span>
+    </div>
+
+    <!-- 访问句（内嵌链接，符合要求） -->
+    <div class="access-sentence">
+      如果你还未将 <a href="https://tvcn-igame.com">爱游戏</a> 加入书签，现在就可以试试看——  
+      这个地址本身就是一个干净、稳定的起点。
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="faq-mini">
+      <h3>常见疑问 · 摘要</h3>
+      <div class="faq-item">
+        <span class="q">Q：这个页面是做什么的？</span>
+        <span class="a">一份叙述性的介绍页，用于说明 <strong>爱游戏</strong> 的入口背景、使用场景和基本提示，不含复杂功能。</span>
+      </div>
+      <div class="faq-item">
+        <span class="q">Q：如何确定访问的是正确的站点？</span>
+        <span class="a">直接使用本页提供的地址 <code style="background:#dcebe4; padding:0 6px; border-radius:4px;">https://tvcn-igame.com</code>，或通过已核实的书签访问。避免通过第三方搜索页的广告链接进入。</span>
+      </div>
+      <div class="faq-item">
+        <span class="q">Q：页面内容会频繁变化吗？</span>
+        <span class="a">本介绍页属于静态说明，内容更新频率很低。主要目的是保持长期可读与稳定参考。</span>
+      </div>
+    </div>
+
+    <!-- 页脚 -->
+    <div class="footer-note">
+      <span>爱游戏 · 页面说明 v1.1 · 更新于 2025</span><br>
+      <span style="opacity:0.6;">记录与入口，而非喧哗。</span>
+    </div>
+  </div>
+</body>
+</html>
